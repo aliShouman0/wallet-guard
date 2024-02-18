@@ -1,27 +1,32 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+
+// import DashboardStack from "../Stacks/DashboardStack/DashboardStack";
+import Dashboard from "../../screens/Dashboard/Dashboard";
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
   return (
-    <Tab.Navigator
-      initialRouteName="Feed"
-      screenOptions={{
-        tabBarActiveTintColor: "#e91e63",
-      }}
-    >
-      <Tab.Screen
-        name="Feed"
-        component={Feed}
-        options={{
-          tabBarLabel: "Home",
-          // tabBarIcon: ({ color, size }) => (
-          // <MaterialCommunityIcons name="home" color={color} size={size} />
-          // ),
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Dashboard"
+        screenOptions={{
+          tabBarActiveTintColor: "#e91e63",
         }}
-      />
-      <Tab.Screen
+      >
+        <Tab.Screen
+          name="Dashboard"
+          component={Dashboard}
+          options={{
+            tabBarLabel: "Dashboard",
+            // tabBarIcon: ({ color, size }) => (
+            // <MaterialCommunityIcons name="home" color={color} size={size} />
+            // ),
+          }}
+        />
+        {/* <Tab.Screen
         name="Notifications"
         component={Notifications}
         options={{
@@ -31,18 +36,9 @@ const BottomTabs = () => {
           // ),
           tabBarBadge: 3,
         }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: "Profile",
-          // tabBarIcon: ({ color, size }) => (
-          // <MaterialCommunityIcons name="account" color={color} size={size} />
-          // ),
-        }}
-      />
-    </Tab.Navigator>
+      />  */}
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 
