@@ -1,6 +1,7 @@
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import BottomTabs from "./src/navigation/BottomTabs/BottomTabs";
 
@@ -9,7 +10,11 @@ import BottomTabs from "./src/navigation/BottomTabs/BottomTabs";
 //
 
 export default function App() {
-  return <BottomTabs />;
+  return (
+    <SafeAreaProvider>
+      <BottomTabs />
+    </SafeAreaProvider>
+  );
 }
 
 const styles = StyleSheet.create({
