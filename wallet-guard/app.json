@@ -25,7 +25,7 @@
       "package": "com.alishouman.walletguard"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "extra": {
       "eas": {
