@@ -1,9 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
+import { Entypo } from "@expo/vector-icons"; 
 
-// import DashboardStack from "../Stacks/DashboardStack/DashboardStack";
-import Dashboard from "../../screens/Dashboard/Dashboard";
+import DashboardStack from "../Stacks/DashboardStack/DashboardStack"; 
+import BottomTabIcon from "../../components/BottomTabIcon/BottomTabIcon";
+import colors from "../../themes/colors";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,30 +15,38 @@ const BottomTabs = () => {
       <Tab.Navigator
         initialRouteName="Dashboard"
         screenOptions={{
-          tabBarActiveTintColor: "#e91e63",
+          tabBarActiveTintColor: "#195CE5FF",
+          tabBarStyle: [
+            {
+              height: 70,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            },
+          ],
         }}
       >
         <Tab.Screen
           name="Dashboard"
-          component={Dashboard}
+          component={DashboardStack}
           options={{
             tabBarLabel: "Dashboard",
-            // tabBarIcon: ({ color, size }) => (
-            // <MaterialCommunityIcons name="home" color={color} size={size} />
-            // ),
+            headerShown: false,
+            tabBarIcon: ({ color, size, focused }) => (
+              <BottomTabIcon
+                backgroundColor={colors.appBlue}
+                icon={() => (
+                  <Entypo
+                    name="bar-graph"
+                    size={25}
+                    color={focused ? "#fff" : "#fff"}
+                    style={{}}
+                  />
+                )}
+              />
+            ),
           }}
         />
-        {/* <Tab.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{
-          tabBarLabel: "Updates",
-          // tabBarIcon: ({ color, size }) => (
-          // <MaterialCommunityIcons name="bell" color={color} size={size} />
-          // ),
-          tabBarBadge: 3,
-        }}
-      />  */}
       </Tab.Navigator>
     </NavigationContainer>
   );
