@@ -1,9 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text } from "react-native";
+import { SafeAreaView, StatusBar, Text, View } from "react-native";
+import { Entypo } from "@expo/vector-icons";
 
 const Dashboard = (props) => {
-  return <Text>Dashboard</Text>;
+  return (
+    <SafeAreaView>
+      <StatusBar barStyle={"light-content"} backgroundColor={"#195CE5FF"} />
+    </SafeAreaView>
+  );
 };
 
 Dashboard.propTypes = {};

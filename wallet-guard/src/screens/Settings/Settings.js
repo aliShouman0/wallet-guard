@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { SafeAreaView, StatusBar, Text } from "react-native";
 
-const Expenses = (props) => {
+const Settings = (props) => {
   return (
     <SafeAreaView>
       <StatusBar barStyle={"light-content"} backgroundColor={"#195CE5FF"} />
@@ -10,6 +10,6 @@ const Expenses = (props) => {
   );
 };
 
-Expenses.propTypes = {};
+Settings.propTypes = {};
 
-export default Expenses;
+export default Settings;
