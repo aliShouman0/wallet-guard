@@ -8,8 +8,8 @@ const BottomTabIcon = ({ icon, backgroundColor }) => {
       style={{
         backgroundColor,
         borderRadius: 50,
-        width: 45,
-        height: 45,
+        width: 38,
+        height: 38,
         justifyContent: "center",
         alignItems: "center",
       }}
