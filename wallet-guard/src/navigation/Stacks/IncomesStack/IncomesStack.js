@@ -4,11 +4,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import ScreenHeader from "../../../components/ScreenHeader/ScreenHeader";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Expenses from "../../../screens/Expenses/Expenses";
+import Incomes from "../../../screens/Incomes/Incomes";
 
 const Stack = createStackNavigator();
 
-const ExpensesStack = (props) => {
+const IncomesStack = (props) => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -22,17 +22,15 @@ const ExpensesStack = (props) => {
     >
       <Stack.Screen
         name="Home"
-        component={Expenses}
+        component={Incomes}
         options={{
-          header: () => (
-            <ScreenHeader screenName={"Expenses"} appIcon={true} />
-          ),
+          header: () => <ScreenHeader screenName={"Incomes"} appIcon={true} />,
         }}
       />
     </Stack.Navigator>
   );
 };
 
-ExpensesStack.propTypes = {};
+IncomesStack.propTypes = {};
 
-export default ExpensesStack;
+export default IncomesStack;
