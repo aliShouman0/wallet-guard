@@ -39,7 +39,7 @@ const BottomTabs = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="Expenses"
+        initialRouteName="Dashboard"
         screenOptions={{
           tabBarActiveTintColor: "#195CE5FF",
           tabBarInactiveTintColor: colors.black,
