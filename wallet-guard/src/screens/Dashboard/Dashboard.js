@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
+import {
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+} from "react-native";
 
 import colors from "../../themes/colors";
 import fontSize from "../../themes/fontSize";
@@ -14,36 +20,41 @@ const Dashboard = (props) => {
 
   const getAllCurrency = () => {
     const data = [
-      { currency: "USD", currencyCountry: "United States Dollar" },
-      { currency: "EUR", currencyCountry: "Euro" },
-      { currency: "JPY", currencyCountry: "Japanese Yen" },
+      { id: 1, currency: "USD", currencyCountry: "United States Dollar" },
+      { id: 1, currency: "EUR", currencyCountry: "Euro" },
+      { id: 1, currency: "JPY", currencyCountry: "Japanese Yen" },
+      { id: 1, currency: "USD", currencyCountry: "United States Dollar" },
+      { id: 1, currency: "EUR", currencyCountry: "Euro" },
+      { id: 1, currency: "JPY", currencyCountry: "Japanese Yen" },
     ];
     setAllCurrency(data);
-    // return
   };
 
   return (
-    <SafeAreaView
-      style={{ backgroundColor: colors.white, flex: 1, padding: 17 }}
-    >
+    <SafeAreaView style={styles.root}>
       <StatusBar barStyle={"light-content"} backgroundColor={colors.appBlue} />
-      <Text
-        style={{
-          fontSize: fontSize.XXLarge,
-          fontWeight: "bold",
-        }}
-      >
-        Select currency
-      </Text>
-      <ScrollView style={{}}>
-        {allCurrency.map((item) => (
-          <CurrencyCard data={item} onClick={() => {}} />
+      <Text style={styles.text}>Select currency</Text>
+      <ScrollView style={{ flex: 1, gap: 2 }}>
+        {allCurrency.map((item, index) => (
+          <CurrencyCard data={item} onClick={() => {}} key={index} />
         ))}
       </ScrollView>
     </SafeAreaView>
   );
 };
 
+const styles = StyleSheet.create({
+  root: {
+    backgroundColor: colors.white,
+    flex: 1,
+    paddingTop: 0,
+  },
+  text: {
+    fontSize: fontSize.XXLarge,
+    fontWeight: "bold",
+    padding: 10,
+  },
+});
 Dashboard.propTypes = {};
 
 export default Dashboard;
