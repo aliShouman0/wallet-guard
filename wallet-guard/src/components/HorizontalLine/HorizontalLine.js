@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Platform, StyleSheet, View } from "react-native";
+
 import colors from "../../themes/colors";
 
 const HorizontalLine = ({ borderStyle, opacity, style }) => {
@@ -36,7 +37,5 @@ const styles = StyleSheet.create({
 export default HorizontalLine;
 
 HorizontalLine.propTypes = {
-  // borderStyle: PropTypes.oneOf(["solid", "dotted", "dashed", undefined]),
+  borderStyle: PropTypes.oneOf(["solid", "dotted", "dashed", undefined]),
 };
-
-// export default HorizontalLine;
