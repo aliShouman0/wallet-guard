@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Dashboard from "../../../screens/Dashboard/Dashboard";
 import ScreenHeader from "../../../components/ScreenHeader/ScreenHeader";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import MainDashboard from "../../../screens/MainDashboard/MainDashboard";
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,15 @@ const DashboardStack = (props) => {
       <Stack.Screen
         name="Home"
         component={Dashboard}
+        options={{
+          header: () => (
+            <ScreenHeader screenName={"Dashboard"} appIcon={true} />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="MainDashboard"
+        component={MainDashboard}
         options={{
           header: () => (
             <ScreenHeader screenName={"Dashboard"} appIcon={true} />
