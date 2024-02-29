@@ -4,5 +4,5 @@ export default fontSize = {
   large: 18,
   XLarge: 20,
   XXLarge: 25,
-
+  "3XLarge": 30,
 };
