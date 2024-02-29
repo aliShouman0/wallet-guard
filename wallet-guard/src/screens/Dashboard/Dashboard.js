@@ -11,7 +11,7 @@ import colors from "../../themes/colors";
 import fontSize from "../../themes/fontSize";
 import CurrencyCard from "../../components/CurrencyCard/CurrencyCard";
 
-const Dashboard = (props) => {
+const Dashboard = ({ navigation }) => {
   const [allCurrency, setAllCurrency] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,13 @@ const Dashboard = (props) => {
       <Text style={styles.text}>Select currency</Text>
       <ScrollView style={{ flex: 1, gap: 2 }}>
         {allCurrency.map((item, index) => (
-          <CurrencyCard data={item} onClick={() => {}} key={index} />
+          <CurrencyCard
+            data={item}
+            onClick={() => {
+              navigation.navigate("MainDashboard", { id: index });
+            }}
+            key={index}
+          />
         ))}
       </ScrollView>
     </SafeAreaView>
